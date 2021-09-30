@@ -1,0 +1,14 @@
+.item-list-container {
+  display: flex;
+  margin-top: 40vh;
+  display: flex;
+  text-align: center;
+  width: 100%;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.text-item-list-container-title {
+  font-family: "Spinnaker", sans-serif !important;
+  width: 60%;
+}

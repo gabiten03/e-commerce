@@ -1,7 +1,8 @@
 import React from 'react'
 import { Navbar, Container, Nav } from 'react-bootstrap'
 import './MyNavBar.css'
-import { FaShoppingCart } from "react-icons/fa";
+
+import CartWidget from '../CardWigdet/CartWidget';
 
 function myNavBar() {
     return (
@@ -30,7 +31,7 @@ function myNavBar() {
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Brand   className="px-3" href="#home">
-                        <FaShoppingCart
+                        <CartWidget
                         />
                     </Navbar.Brand>
                 </Container>
