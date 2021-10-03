@@ -1,5 +1,7 @@
 .btn-counter {
   padding-bottom: 3rem !important;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-counter-add {

@@ -2,18 +2,34 @@ import React from 'react'
 import './App.css'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import MyNavBar from './components/MyNavBar/MyNavBar'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
 
-
+} from "react-router-dom";
 
 function App() {
   return (
-    <div>
+
+    <Router>
 
       <MyNavBar />
+      <Switch>
+        <Route path="/comida">
+          <ItemListContainer />
+        </Route>
+        <Route path="/users">
 
-      <ItemListContainer />
+        </Route>
+        <Route path="/">
 
-    </div>
+        </Route>
+      </Switch>
+
+
+    </Router >
+
   );
 }
 

@@ -12,3 +12,10 @@
 .text-item-list-container-title {
   font-family: "Spinnaker", sans-serif !important;
 }
+.number-counter {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  padding-top: 0.3rem;
+  font-size: 19px;
+  font-weight: 500;
+}

@@ -40,10 +40,11 @@ function ItemCount(props) {
                 </Card.Text>
                 <Card.Text>Stock: {props.stock}</Card.Text>
                 <Card.Text>Stock Inicial: {props.inicial}</Card.Text>
-                <Card.Text>{counter}</Card.Text>
+
                 <div className="btn-counter">
 
                     <Button variant="primary" className="btn-counter-add" onClick={Increment}>+</Button>
+                    <Card.Text className="number-counter">{counter}</Card.Text>
                     <Button variant="primary" className="btn-counter-add" onClick={Decrement}>-</Button>
                 </div>
                 <Button onClick={Decrement}>Agregar a Carrito</Button>
