@@ -15,9 +15,10 @@ function App() {
     <Router>
 
       <MyNavBar />
+      <ItemListContainer title="Bienvenidos al Ecommerce!!!" />
       <Switch>
         <Route path="/comida">
-          <ItemListContainer />
+
         </Route>
         <Route path="/users">
 
