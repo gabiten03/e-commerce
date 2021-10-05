@@ -15,7 +15,7 @@ function App() {
     <Router>
 
       <MyNavBar />
-      <ItemListContainer title="Bienvenidos al Ecommerce!!!" />
+
       <Switch>
         <Route path="/comida">
 
@@ -24,7 +24,7 @@ function App() {
 
         </Route>
         <Route path="/">
-
+          <ItemListContainer title="Tienda De Servicios para Mascotas" />
         </Route>
       </Switch>
 

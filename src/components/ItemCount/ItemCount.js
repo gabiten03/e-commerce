@@ -6,14 +6,16 @@ function ItemCount(props) {
 
     const [counter, setCounter] = useState(0);
 
+
     const Increment = () => {
-        if (counter < parseInt(props.stock)) {
+
+        if ((counter + parseInt(props.inicial)) < parseInt(props.stock)) {
             setCounter(counter + 1);
         }
     };
 
     const Decrement = () => {
-        if (counter > 0) {
+        if ((counter + parseInt(props.inicial)) > parseInt(props.inicial)) {
             setCounter(counter - 1);
         }
     };
@@ -21,6 +23,7 @@ function ItemCount(props) {
     useEffect(() => {
         setTimeout(() => {
             console.log("Gettin' Data");
+
         }, 2000);
     }, []);
 
@@ -35,7 +38,7 @@ function ItemCount(props) {
 
             <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
-                <Card.Img variant="top" src={props.url} />
+                <Card.Img variant="top" src={props.url} className="img-product" />
                 <Card.Text>{props.description}
                 </Card.Text>
                 <Card.Text>Stock: {props.stock}</Card.Text>
@@ -44,7 +47,7 @@ function ItemCount(props) {
                 <div className="btn-counter">
 
                     <Button variant="primary" className="btn-counter-add" onClick={Increment}>+</Button>
-                    <Card.Text className="number-counter">{counter}</Card.Text>
+                    <Card.Text className="number-counter">{counter + parseInt(props.inicial)}</Card.Text>
                     <Button variant="primary" className="btn-counter-add" onClick={Decrement}>-</Button>
                 </div>
                 <Button onClick={Decrement}>Agregar a Carrito</Button>
