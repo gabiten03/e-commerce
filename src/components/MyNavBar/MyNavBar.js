@@ -10,7 +10,7 @@ function myNavBar() {
         <>
             <Navbar collapseOnSelect fixed='top' expand='sm' bg="primary" variant="dark">
                 <Container fluid className="container-navbar">
-                    <Navbar.Brand className="px-3" href="#home">Pet Shop
+                    <Navbar.Brand className="px-3" href="#home">Ecommerce
                         <img
                             src="/logo.svg"
                             width="30"
@@ -26,8 +26,8 @@ function myNavBar() {
 
                         <Nav className="px-3 justify-content-center">
                             <Nav.Link className="px-4" href="/">Inicio</Nav.Link>
-                            <Nav.Link className="px-4" href="/comida">Comida</Nav.Link>
-                            <Nav.Link className="px-4" href="#pricing">Accesorios</Nav.Link>
+                            <Nav.Link className="px-4" href="/comida">Tienda</Nav.Link>
+                            <Nav.Link className="px-4" href="#pricing">FAQ</Nav.Link>
                             <Nav.Link className="px-4" href="#pricing">Servicios</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
