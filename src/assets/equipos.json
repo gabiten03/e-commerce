@@ -5,7 +5,8 @@
         "description": "Heladera dos puertas con freezer",
         "price": 120000,
         "pictureUrl": "https://www.torca.com.ar/images/58554-1.jpg",
-        "stock": 20
+        "stock": 20,
+        "initial": 2
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "description": "Calefactor doble con termostato",
         "price": 20000,
         "pictureUrl": "https://www.torca.com.ar/images/699.jpg",
-        "stock": 20
+        "stock": 20,
+        "initial": 2
     },
     {
         "id": 3,
@@ -21,6 +23,7 @@
         "description": "Freezer doble con termostato",
         "price": 120000,
         "pictureUrl": "https://www.torca.com.ar/images/000000000005839183881geternity.jpg",
-        "stock": 20
+        "stock": 20,
+        "initial": 2
     }
 ]

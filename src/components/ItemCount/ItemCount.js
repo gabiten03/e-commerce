@@ -1,21 +1,27 @@
 import { React, useState, useEffect } from 'react';
-import { Col, Button, Card } from 'react-bootstrap';
+import { Col, Button, Card, Modal } from 'react-bootstrap';
 import './ItemCount.css'
 
 function ItemCount(props) {
 
+    const { title, pictureUrl, stock, description, initial } = props.props;
     const [counter, setCounter] = useState(0);
+
+
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
 
     const Increment = () => {
 
-        if ((counter + parseInt(props.inicial)) < parseInt(props.stock)) {
+        if ((counter + parseInt(initial) < parseInt(stock))) {
             setCounter(counter + 1);
         }
     };
 
     const Decrement = () => {
-        if ((counter + parseInt(props.inicial)) > parseInt(props.inicial)) {
+        if ((counter + parseInt(initial) > parseInt(initial))) {
             setCounter(counter - 1);
         }
     };
@@ -28,33 +34,43 @@ function ItemCount(props) {
     }, []);
 
     return (
+        <>
+            <Col><Card
+                className="card-container"
+                text='dark'
+                style={{ width: '18rem' }}
+            >
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Img variant="top" src={pictureUrl} className="img-product" />
+                    <Card.Text>{description}
+                    </Card.Text>
+                    <Card.Text>Stock: {stock}</Card.Text>
+                    <Card.Text>Stock Inicial: {initial}</Card.Text>
 
-        <Col><Card
-            className="card-container"
-            text='dark'
-            style={{ width: '18rem' }}
-        >
+                    <div className="btn-counter">
 
+                        <Button variant="primary" className="btn-counter-add" onClick={Increment}>+</Button>
+                        <Card.Text className="number-counter">{counter + parseInt(initial)}</Card.Text>
+                        <Button variant="primary" className="btn-counter-add" onClick={Decrement}>-</Button>
+                    </div>
+                    <Button onClick={handleShow}>Agregar a Carrito</Button>
+                </Card.Body>
+            </Card></Col>
+            <Modal className="modal-container" show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>Cantidad Seleccionada {title}</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{counter + parseInt(initial)}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                        Cerrar
+                    </Button>
 
-            <Card.Body>
-                <Card.Title>{props.name}</Card.Title>
-                <Card.Img variant="top" src={props.url} className="img-product" />
-                <Card.Text>{props.description}
-                </Card.Text>
-                <Card.Text>Stock: {props.stock}</Card.Text>
-                <Card.Text>Stock Inicial: {props.inicial}</Card.Text>
+                </Modal.Footer>
+            </Modal>
 
-                <div className="btn-counter">
-
-                    <Button variant="primary" className="btn-counter-add" onClick={Increment}>+</Button>
-                    <Card.Text className="number-counter">{counter + parseInt(props.inicial)}</Card.Text>
-                    <Button variant="primary" className="btn-counter-add" onClick={Decrement}>-</Button>
-                </div>
-                <Button onClick={Decrement}>Agregar a Carrito</Button>
-            </Card.Body>
-        </Card></Col>
-
-
+        </>
 
 
 
@@ -62,5 +78,7 @@ function ItemCount(props) {
 
     );
 }
+
+
 
 export default ItemCount;

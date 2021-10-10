@@ -4,7 +4,7 @@ import './Item.css'
 
 
 function Item(props) {
-    console.log(props)
+    console.log(props.props)
     const { title, pictureUrl, stock, description, price } = props.props;
 
     return (
@@ -15,7 +15,9 @@ function Item(props) {
                 <Card.Text>Stock: {stock}</Card.Text>
                 <Card.Text>Precio: ${price}</Card.Text>
                 <Card.Text>Descripcion: {description}</Card.Text>
+
             </Card>
+
         </div >
     )
 }

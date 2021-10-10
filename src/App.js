@@ -9,6 +9,8 @@ import {
 
 } from "react-router-dom";
 
+import ItemCount from './components/ItemCount/ItemCount';
+
 function App() {
   return (
 
@@ -19,7 +21,7 @@ function App() {
 
       <Switch>
         <Route path="/comida">
-
+          <ItemCount />
         </Route>
         <Route path="/users">
 

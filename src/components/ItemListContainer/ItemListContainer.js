@@ -6,6 +6,7 @@ import DataJSON from '../../assets/equipos.json'
 import ItemList from '../ItemList/ItemList'
 
 
+
 function ItemListContainer() {
 
     const [ListItems, setListItems] = useState(0);
@@ -22,12 +23,13 @@ function ItemListContainer() {
         });
 
     }, []);
-
+    console.log("itemlist " + ListItems)
     return (
         < >
             <Row className="item-list-container" >
                 <Col className="d-flex justify-content-center">
                     <ItemList items={ListItems} />
+
                 </Col>
             </Row>
         </>
