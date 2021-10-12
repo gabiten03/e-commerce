@@ -1,10 +1,11 @@
 import { React, useState, useEffect } from 'react';
 import { Col, Button, Card, Modal } from 'react-bootstrap';
 import './ItemCount.css'
+import { Link } from 'react-router-dom'
 
 function ItemCount(props) {
 
-    const { title, pictureUrl, stock, description, initial } = props.props;
+    const { title, pictureUrl, stock, description, initial, id } = props.props;
     const [counter, setCounter] = useState(0);
 
 
@@ -35,28 +36,35 @@ function ItemCount(props) {
 
     return (
         <>
-            <Col><Card
-                className="card-container"
-                text='dark'
-                style={{ width: '18rem' }}
-            >
-                <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Img variant="top" src={pictureUrl} className="img-product" />
-                    <Card.Text>{description}
-                    </Card.Text>
-                    <Card.Text>Stock: {stock}</Card.Text>
-                    <Card.Text>Stock Inicial: {initial}</Card.Text>
 
-                    <div className="btn-counter">
 
-                        <Button variant="primary" className="btn-counter-add" onClick={Increment}>+</Button>
-                        <Card.Text className="number-counter">{counter + parseInt(initial)}</Card.Text>
-                        <Button variant="primary" className="btn-counter-add" onClick={Decrement}>-</Button>
-                    </div>
-                    <Button onClick={handleShow}>Agregar a Carrito</Button>
-                </Card.Body>
-            </Card></Col>
+            <Col>
+                <Card
+                    className="card-container"
+                    text='dark'
+                    style={{ width: '18rem' }}
+                >
+                    <Card.Body>
+
+                        <Link to={`/detail/${id}`} style={{ textDecoration: 'none' }} >
+                            <Card.Title>{title}</Card.Title>
+                            <Card.Img variant="top" src={pictureUrl} className="img-product" />
+                            <Card.Text>{description}
+                            </Card.Text>
+                            <Card.Text>Stock: {stock}</Card.Text>
+                            <Card.Text>Stock Inicial: {initial}</Card.Text>
+                        </Link>
+                        <div className="btn-counter">
+
+                            <Button variant="primary" className="btn-counter-add" onClick={Increment}>+</Button>
+                            <Card.Text className="number-counter">{counter + parseInt(initial)}</Card.Text>
+                            <Button variant="primary" className="btn-counter-add" onClick={Decrement}>-</Button>
+                        </div>
+                        <Button onClick={handleShow}>Agregar a Carrito</Button>
+                    </Card.Body>
+                </Card></Col>
+
+
             <Modal className="modal-container" show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Cantidad Seleccionada {title}</Modal.Title>

@@ -9,7 +9,9 @@ import {
 
 } from "react-router-dom";
 
-import ItemCount from './components/ItemCount/ItemCount';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+
+
 
 function App() {
   return (
@@ -17,16 +19,13 @@ function App() {
     <Router>
 
       <MyNavBar />
-
-
       <Switch>
-        <Route path="/comida">
-          <ItemCount />
+        <Route exact path="/detail/:id" component={ItemDetailContainer}>
         </Route>
         <Route path="/users">
-
         </Route>
-        <Route path="/">
+        <Route exact path="/">
+
           <ItemListContainer />
         </Route>
       </Switch>

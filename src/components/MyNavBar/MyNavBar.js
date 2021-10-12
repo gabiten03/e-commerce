@@ -26,9 +26,9 @@ function myNavBar() {
 
                         <Nav className="px-3 justify-content-center">
                             <Nav.Link className="px-4" href="/">Inicio</Nav.Link>
-                            <Nav.Link className="px-4" href="/comida">Tienda</Nav.Link>
-                            <Nav.Link className="px-4" href="#pricing">FAQ</Nav.Link>
-                            <Nav.Link className="px-4" href="#pricing">Servicios</Nav.Link>
+                            <Nav.Link className="px-4" href="/categorias">Categorias</Nav.Link>
+                            <Nav.Link className="px-4" href="/productos">Productos</Nav.Link>
+                            <Nav.Link className="px-4" href="/contacto">Contacto</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                     <Navbar.Brand className="px-3" href="#home">
