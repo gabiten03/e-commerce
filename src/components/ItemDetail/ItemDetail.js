@@ -6,7 +6,9 @@ import { Link } from 'react-router-dom'
 
 function ItemDetail(props) {
     console.log(props)
+
     const { title, pictureUrl, stock, description, initial, id } = props;
+
     return (
 
 
@@ -17,14 +19,13 @@ function ItemDetail(props) {
         >
             <Card.Body>
 
-                <Link to={`/detail/${id}`} style={{ textDecoration: 'none' }} >
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Img variant="top" src={pictureUrl} className="img-product" />
-                    <Card.Text>{description}
-                    </Card.Text>
-                    <Card.Text>Stock: {stock}</Card.Text>
-                    <Card.Text>Stock Inicial: {initial}</Card.Text>
-                </Link>
+                <Card.Title>{title}</Card.Title>
+                <Card.Img variant="top" src={pictureUrl} className="img-product" />
+                <Card.Text>{description}
+                </Card.Text>
+                <Card.Text>Stock: {stock}</Card.Text>
+                <Card.Text>Stock Inicial: {initial}</Card.Text>
+
 
             </Card.Body>
         </Card>
